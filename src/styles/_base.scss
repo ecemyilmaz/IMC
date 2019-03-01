@@ -1,0 +1,37 @@
+// COLOR VARS
+$darkblue: #1F2833;
+$cyan: #4AA29E;
+$aqua: #407274;
+
+// MIXINS
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+  transition: $property $duration $ease;
+}
+
+// BASE
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.content {
+  background: $darkblue;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+
+  // Center Display and Form content
+  & > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
