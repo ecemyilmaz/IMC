@@ -1,15 +1,37 @@
-.Display{
+.Display {
   height: 70%;
   width: 30%;
   color: white;
+  justify-content: space-around;
   background: linear-gradient($cyan, $aqua);
 
-  .circumf{
+  &__text {
+    text-align: center;
+  }
+
+  .circumf {
     width: 70%;
 
-    &_text{
+    &_text {
       font-size: 0.5rem;
       fill: white;
     }
+
+    &_path {
+      stroke-dasharray: 0;
+
+      transition: stroke 1s;
+      animation: animatepath 2s;
+      animation-delay: 0.5s;
+    }
+  }
+}
+
+@keyframes animatepath {
+  from {
+    stroke-dasharray: 0;
+  }
+  to {
+    stroke-dasharray: 100;
   }
 }

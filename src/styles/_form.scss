@@ -1,5 +1,192 @@
-.Form{
+.Form {
   height: 60%;
   width: 35%;
-  background:#fff;
+  background: #fff;
+  justify-content: center;
+
+  .range-group {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+
+    .range-field {
+      margin-bottom: 1.5rem;
+
+      .range-current {
+        color: grey;
+        font-size: 0.8rem;
+      }
+
+      &__text {
+        display: flex;
+        justify-content: space-between;
+
+        .extreme {
+          font-size: 0.7rem;
+          color: grey;
+        }
+
+        .destaque {
+          color: $cyan;
+          font-weight: 700;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      background: transparent;
+      width: 100%;
+      height: 20px;
+
+      // Remove box when clicked
+      &:focus {
+        outline: none;
+      }
+
+      // WEBKIT
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: #ffffff;
+        margin-top: -5px;
+        box-shadow: 1px 1px 2px rgba(#000, 0.5);
+
+        cursor: pointer;
+      }
+
+      &::-webkit-slider-runnable-track {
+        width: 60%;
+        height: 9px;
+        background: #bdbdbd;
+        border-radius: 3rem;
+
+        transition: all 0.5s;
+        cursor: pointer;
+      }
+
+      &:hover::-webkit-slider-runnable-track {
+        background: $cyan;
+      }
+
+      // IE
+
+      &::-ms-track {
+        width: 60%;
+        cursor: pointer;
+        height: 9px;
+
+        transition: all 0.5s;
+        /* Hides the slider so custom styles can be added */
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+      }
+
+      &::-ms-thumb {
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: #ffffff;
+        margin-top: -5px;
+        box-shadow: 1px 1px 2px rgba(#000, 0.5);
+
+        cursor: pointer;
+      }
+
+      &::-ms-fill-lower {
+        background: $cyan;
+        border-radius: 3rem;
+      }
+      &:focus::-ms-fill-lower {
+        background: $cyan;
+      }
+      &::-ms-fill-upper {
+        background: #bdbdbd;
+        border-radius: 3rem;
+      }
+      &:focus::-ms-fill-upper {
+        background: #bdbdbd;
+      }
+
+      //FIREFOX
+      &::-moz-range-thumb {
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: #ffffff;
+        margin-top: -5px;
+        box-shadow: 1px 1px 2px rgba(#000, 0.5);
+
+        cursor: pointer;
+      }
+
+      &::-moz-range-track {
+        width: 60%;
+        height: 9px;
+        background: #bdbdbd;
+        border-radius: 3rem;
+
+        transition: all 0.5s;
+        cursor: pointer;
+      }
+      &:hover::-moz-range-track {
+        background: $cyan;
+      }
+    }
+  }
+
+  .switch-field {
+    padding: 40px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+
+    & input {
+      position: absolute !important;
+      clip: rect(0, 0, 0, 0);
+      height: 1px;
+      width: 1px;
+      border: 0;
+      overflow: hidden;
+    }
+
+    & label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30%;
+      height: 25px;
+      background-color: #e4e4e4;
+      color: rgba(0, 0, 0, 0.6);
+      font-size: 14px;
+      font-weight: normal;
+      text-align: center;
+      text-shadow: none;
+      padding: 6px 14px;
+      -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3),
+        0 1px rgba(255, 255, 255, 0.1);
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3),
+        0 1px rgba(255, 255, 255, 0.1);
+      -webkit-transition: all 0.1s ease-in-out;
+      -moz-transition: all 0.1s ease-in-out;
+      -ms-transition: all 0.1s ease-in-out;
+      -o-transition: all 0.1s ease-in-out;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    & input:checked + label {
+      background-color: $cyan;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      color: white;
+    }
+  }
 }
