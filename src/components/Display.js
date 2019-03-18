@@ -81,6 +81,7 @@ class Display extends Component {
     }
     return state;
   }
+
   render() {
     let estado = this.evalResult(this.calculate());
     return (
