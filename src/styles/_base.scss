@@ -31,9 +31,19 @@ $alturatlmvl: "660px";
   box-sizing: inherit;
 }
 
+html {
+  background: $darkblue;
+}
+
+.loading {
+  background: $darkblue;
+}
+
 .content {
   background: $darkblue;
   height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 
   display: flex;
   align-items: center;
@@ -47,6 +57,7 @@ $alturatlmvl: "660px";
 
   @media only screen and (max-height: $alturalarge) and (max-width: $small) {
     height: auto;
+    margin-top: 1rem;
   }
 
   // Center Display and Form content

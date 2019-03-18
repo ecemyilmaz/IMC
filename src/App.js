@@ -9,7 +9,8 @@ class App extends Component {
 
     this.state = {
       height: 140,
-      weight: 40
+      weight: 40,
+      isLoading: true
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -21,15 +22,23 @@ class App extends Component {
     this.setState(obj);
   }
 
+  componentDidMount() {
+    this.setState({ isLoading: false });
+  }
+
   render() {
-    return (
-      <div className="App">
-        <div className="content">
-          <Display appState={this.state} />
-          <Form appState={this.state} stateChange={this.handleChange} />
+    if (this.state.isLoading) {
+      return <div className="loading" />;
+    } else {
+      return (
+        <div className="App">
+          <div className="content">
+            <Display appState={this.state} />
+            <Form appState={this.state} stateChange={this.handleChange} />
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
 
