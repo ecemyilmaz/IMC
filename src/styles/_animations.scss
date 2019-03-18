@@ -1,0 +1,19 @@
+//SVG Path Animation
+@keyframes animatepath {
+  from {
+    stroke-dasharray: 0;
+  }
+  to {
+    stroke-dasharray: 100;
+  }
+}
+
+// Fade In
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

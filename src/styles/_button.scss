@@ -13,8 +13,19 @@ button {
   &.learn-more {
     width: 12rem;
     height: auto;
+
+    @media only screen and (max-width: $small) {
+      font-size: 1em;
+      width: 10rem;
+    }
+
+    @media only screen and (max-height: $alturalarge) and (min-width: $small) {
+      font-size: 0.8rem;
+      width: 8rem;
+    }
+
     .circle {
-      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
       position: relative;
       margin: 0;
       width: 2.5rem;
@@ -22,22 +33,42 @@ button {
       background: $darkblue;
       border-radius: 1.625rem;
 
+      @media only screen and (max-width: $small) {
+        font-size: 1em;
+        width: 1.7rem;
+        height: 1.7rem;
+      }
+
+      @media only screen and (max-height: $alturalarge) and (min-width: $small) {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
       .icon {
-        @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+        @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
         position: absolute;
         top: 0;
         bottom: 0;
         margin: auto;
         background: white;
         &.arrow {
-          @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+          @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
           left: 0.35rem;
           width: 1.125rem;
           height: 0.125rem;
           background: none;
+
+          @media only screen and (max-width: $small) {
+            left: 0;
+          }
+
+          @media only screen and (max-height: $alturalarge) and (min-width: $small) {
+            left: -0.1rem;
+          }
+
           &::before {
             position: absolute;
-            content: '';
+            content: "";
             top: -0.25rem;
             right: 0.0625rem;
             width: 0.625rem;
@@ -51,7 +82,7 @@ button {
     }
 
     .button-text {
-      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
       position: absolute;
       top: 0;
       left: 0;
@@ -64,6 +95,16 @@ button {
       line-height: 1.6;
       text-align: center;
       text-transform: uppercase;
+
+      @media only screen and (max-width: $small) {
+        margin: 0 0 0 1.5rem;
+        padding: 0.2rem 0;
+      }
+
+      @media only screen and (max-height: $alturalarge) and (min-width: $small) {
+        padding: 0.2rem 0;
+        margin: 0 0 0 2rem;
+      }
     }
   }
   &:hover {
@@ -72,8 +113,8 @@ button {
       background: $cyan;
       .icon {
         &.arrow {
-        background: white;
-        transform: translate(1rem, 0);
+          background: white;
+          transform: translate(1rem, 0);
         }
       }
     }

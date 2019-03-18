@@ -4,7 +4,42 @@
   color: white;
   justify-content: space-around;
   background: linear-gradient($cyan, $aqua);
+  padding: 0.5rem 0;
 
+  @media only screen and (max-width: $large) {
+    height: 55%;
+  }
+
+  @media only screen and (max-width: $medium) {
+    width: 40%;
+  }
+
+  @media only screen and (max-width: $small) {
+    height: 35%;
+    width: 70%;
+  }
+
+  @media only screen and (max-width: $smaller) {
+    width: 80%;
+  }
+
+  @media only screen and (max-height: $alturalarge) and (min-width: $small) {
+    height: 80%;
+  }
+
+  @media only screen and (max-height: $alturatlmvl) and (max-width: $small) {
+    height: auto;
+    margin-top: 1rem;
+  }
+
+  h1 {
+    @media only screen and (max-width: $small) {
+      font-size: 1.4em;
+    }
+    @media only screen and (max-height: $alturalarge) and (min-width: $small) {
+      font-size: 1.2rem;
+    }
+  }
   &__text {
     text-align: center;
   }
@@ -12,9 +47,29 @@
   .circumf {
     width: 70%;
 
+    @media only screen and (max-width: $small) {
+      width: 40%;
+    }
+
+    @media only screen and (max-width: $smaller) {
+      width: 50%;
+    }
+
+    @media only screen and (max-width: $smallest) {
+      width: 60%;
+    }
+
+    @media only screen and (max-height: $alturalarge) and (min-width: $small) {
+      width: 60%;
+    }
+
     &_text {
       font-size: 0.5rem;
       fill: white;
+
+      @media only screen and (max-width: $small) {
+        font-size: 0.4rem;
+      }
     }
 
     &_path {
@@ -24,14 +79,5 @@
       animation: animatepath 2s;
       animation-delay: 0.5s;
     }
-  }
-}
-
-@keyframes animatepath {
-  from {
-    stroke-dasharray: 0;
-  }
-  to {
-    stroke-dasharray: 100;
   }
 }

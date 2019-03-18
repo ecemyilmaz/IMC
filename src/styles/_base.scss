@@ -1,10 +1,24 @@
 // COLOR VARS
-$darkblue: #1F2833;
-$cyan: #4AA29E;
+$darkblue: #1f2833;
+$cyan: #4aa29e;
 $aqua: #407274;
 
+// MEDIA QUERIES
+$large: "1024px";
+$medium: "768px";
+$small: "567px";
+$smaller: "425px";
+$smallest: "320px";
+
+$alturalarge: "567px";
+$alturatlmvl: "660px";
+
 // MIXINS
-@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+@mixin transition(
+  $property: all,
+  $duration: 0.45s,
+  $ease: cubic-bezier(0.65, 0, 0.076, 1)
+) {
   transition: $property $duration $ease;
 }
 
@@ -27,10 +41,20 @@ $aqua: #407274;
 
   font-size: 16px;
 
+  @media only screen and (max-width: $small) {
+    flex-direction: column;
+  }
+
+  @media only screen and (max-height: $alturalarge) and (max-width: $small) {
+    height: auto;
+  }
+
   // Center Display and Form content
   & > * {
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    animation: fadein 1.5s;
   }
 }
